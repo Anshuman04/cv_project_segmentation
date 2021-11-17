@@ -1,0 +1,46 @@
+{
+    "name": "Anshuman",
+    "age": 26,
+    "layers": [
+        {
+            "type": "conv",
+            "params": {
+                "in_channels": 1,
+                "out_channels": 40,
+                "kernel_size": 3,
+                "stride": 1
+            },
+            "activation": "sigmoid",
+            "postProc": {
+                "type": "maxPool",
+                "params": [2]
+            }
+        },
+        {
+            "type": "conv",
+            "params": {
+                "in_channels": 40,
+                "out_channels": 40,
+                "kernel_size": 3,
+                "stride": 1
+            },
+            "activation": "sigmoid",
+            "postProc": {
+                "type": "maxPool",
+                "params": [2]
+            }
+        },
+        {
+            "type": "flatten"
+        },
+        {
+            "type": "fc",
+            "params": [1000, 100],
+            "activation": "sigmoid"
+        },
+        {
+            "type": "fc",
+            "params": [100, 10]
+        }
+    ]
+}
